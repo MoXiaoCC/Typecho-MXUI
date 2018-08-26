@@ -7,7 +7,7 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.9,user-scalable=no">
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
@@ -32,13 +32,13 @@
 </head>
 <style>
 body {font-family:Microsoft YaHei,Helvetica,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif; }
-a{color: #233333 ;text-decoration: none;}
+a{color: #FF00FF ;text-decoration: none;}
 
 body{max-width:1000px; margin:0 auto;}
-
+li{list-style-type:none;}
 .pagenav a {letter-spacing:8px;}
 a.next{letter-spacing:1px;}
-img{max-height:400px;}
+img{max-height:200px;}
 </style>
 <body>
 <!--[if lt IE 8]>
@@ -52,7 +52,7 @@ img{max-height:400px;}
   <span class="mdui-typo-title">
             <?php if ($this->options->logoUrl): ?>
                 <a  href="<?php $this->options->siteUrl(); ?>">
-                    <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
+                    <img src="<?php $this->options->logoUrl() ?>"  height="70" alt="<?php $this->options->title() ?>"/>
                 </a>
             <?php else: ?>
                 <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>

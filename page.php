@@ -1,13 +1,23 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-<div class="col-mb-12 col-8" id="main" role="main">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
-        <div class="post-content" itemprop="articleBody">
-            <?php $this->content(); ?>
-        </div>
+<div style="max-width:1000px;" class="mdui-m-a-1">
+
+    <article>
+        <p class="mdui-typo-title"><strong><?php $this->title() ?></strong></p>
+		
+		  <p class="mdui-typo-subheading-opacity">
+		  <?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
+		  <?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a>
+		  
+
+		  </p>
+         <div class="mdui-typo-subheading-opacity mdui-shadow-0 mdui-m-a-1 mdui-p-a-1">   <?php $this->content(); ?>
+
+		 </div>
     </article>
+
+	
     <?php $this->need('comments.php'); ?>
 </div><!-- end #main-->
 

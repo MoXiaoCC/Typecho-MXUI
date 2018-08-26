@@ -1,7 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-<div style="max-width:1000px;">
+<div style="max-width:1000px;" class="mdui-m-a-1">
+
+
 
 
 
@@ -12,24 +14,16 @@
 		  <?php _e('分类: '); ?><?php $this->category(','); ?>
 		  <?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
 		  <?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a>
+		  <?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?>
+		  浏览量: <?php get_post_view($this) ?>
 		  </p>
-		
 
-		
-		
-		
-		
-<style>
-         p{letter-spacing:1px;line-height:30px;font-size:20px;}
-		 </style>
 
-            <?php $this->content(); ?>
-      
-		
-		
-		
-        <p itemprop="keywords" class="tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>
-		
+         <div class="mdui-typo-subheading-opacity mdui-shadow-0 mdui-m-a-1 mdui-p-a-1">   <?php $this->content(); ?>
+
+
+		 </div>
+
 		
     </article>
 	
@@ -59,12 +53,12 @@
   </div>
     <div class="mdui-col">
     <div class="mdui-grid-tile">
-      <img src="weixin.jpg"/>
+      <img src="./usr/themes/mxui/img/wx.jpg"/>
     </div>
   </div>
   <div class="mdui-col">
     <div class="mdui-grid-tile">
-      <img src="zfb.jpg"/>
+      <img src="./usr/themes/mxui/img/zfb.jpg"/>
     </div>
   </div>
     <div class="mdui-col">
@@ -105,11 +99,13 @@
 	
 
     <?php $this->need('comments.php'); ?>
+	
+<div class="mdui-card mdui-shadow-0  mdui-m-a-1  mdui-p-a-1">
+<div class="mdui-float-left">上一篇: <?php $this->thePrev('%s','没有了'); ?></div>
+<div class="mdui-float-right">下一篇: <?php $this->theNext('%s','没有了'); ?></div>
+</div>
 
-    <ul class="post-near">
-        <li>上一篇: <?php $this->thePrev('%s','没有了'); ?></li>
-        <li>下一篇: <?php $this->theNext('%s','没有了'); ?></li>
-    </ul>
+
 </div><!-- end #main-->
 
 <?php $this->need('sidebar.php'); ?>

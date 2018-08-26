@@ -1,9 +1,10 @@
 
 
 
+  <div class="mdui-divider"></div>
 
+<footer class="mdui-center mdui-typo mdui-p-b-2 mdui-p-t-3">
 
-<footer class="mdui-center mdui-typo mdui-p-b-2 mdui-p-t-5">
 <div class="mdui-typo-body-1 mdui-text-center">
 
 	    <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> &copy; 2017-<?php echo date('Y'); ?>  .
