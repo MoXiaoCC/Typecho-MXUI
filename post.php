@@ -53,12 +53,12 @@
   </div>
     <div class="mdui-col">
     <div class="mdui-grid-tile">
-      <img src="./usr/themes/mxui/img/wx.jpg"/>
+      <img src="<?php $this->options->themeUrl('/img/wx.jpg'); ?>"/>
     </div>
   </div>
   <div class="mdui-col">
     <div class="mdui-grid-tile">
-      <img src="./usr/themes/mxui/img/zfb.jpg"/>
+      <img src="<?php $this->options->themeUrl('/img/zfb.jpg'); ?>"/>
     </div>
   </div>
     <div class="mdui-col">
