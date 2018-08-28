@@ -7,7 +7,8 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.9,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.1, user-scalable=no">
+	
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
@@ -19,8 +20,7 @@
 
 	
 	
-	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
-	<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('css/mdui.min.css'); ?>">
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
@@ -31,16 +31,25 @@
     <?php $this->header(); ?>
 </head>
 <style>
-body {font-family:Microsoft YaHei,Helvetica,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif; }
+
 a{color: #FF00FF ;text-decoration: none;}
 
 body{max-width:1000px; margin:0 auto;}
 li{list-style-type:none;}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 .pagenav a {letter-spacing:8px;}
 a.next{letter-spacing:1px;}
 img{max-height:200px;}
+
+
+
+
 </style>
-<body>
+<body class="mdui-theme-accent-blue">
 <!--[if lt IE 8]>
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
