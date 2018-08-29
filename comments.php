@@ -13,7 +13,7 @@
  
  
  
-<!--li id="li-<?php $comments->theId(); ?>" class="comment-body<?php 
+<li id="li-<?php $comments->theId(); ?>" class="comment-body<?php 
 if ($comments->levels > 0) {
     echo ' comment-child';
     $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
@@ -22,20 +22,25 @@ if ($comments->levels > 0) {
 }
 $comments->alt(' comment-odd', ' comment-even');
 echo $commentClass;
-?>"-->
+?>">
 
 <ul class="mdui-list mdui-list-dense">
-  <li class="mdui-list-item mdui-ripple">
+  <!--li class="mdui-divider mdui-m-y-0"></li-->
+  <li class="mdui-list-item">
     <div class="mdui-list-item-avatar"><img class="mdui-img-rounded" <?php $comments->gravatar('40', ''); ?></div>
     <div class="mdui-list-item-content">
       <div class="mdui-list-item-title">
-	  <?php $comments->author(); ?> <a href="<?php $comments->permalink(); ?>"><?php $comments->date('Y-m-d H:i'); ?></a> <?php $comments->reply(); ?>      
+	  <?php $comments->author(); ?> <a href="<?php $comments->permalink(); ?>"><?php $comments->date('Y-m-d H:i'); ?></a> 
 	  <div class="mdui-list-item-text mdui-list-item-two-line"><?php $comments->content(); ?></div>
 	  </div>
 
     </div>
+	
+	  	<!--div class="mdui-float-righ" mdui-dialog="{target: '#pinglun'}"><?php $comments->reply(); ?> </div-->
+	
   </li>
-  <li class="mdui-divider-inset mdui-m-y-0"></li>
+  
+
 </ul>
 
 <?php if ($comments->children) { ?>
@@ -49,10 +54,16 @@ echo $commentClass;
 
 <div class="mdui-row">
 
-	<div class="mdui-card mdui-shadow-0 mdui-hoverable mdui-m-a-1 mdui-p-a-1">
+	<div class="mdui-card mdui-shadow-0 mdui-m-a-1 mdui-p-a-1">
+			<button class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-center" mdui-dialog="{target: '#pinglun'}">添加新评论</button>
     <?php $this->comments()->to($comments); ?>
     <?php if ($comments->have()): ?>
-	<h3><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></h3>
+	<h3><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?> 	
+
+	</h3>
+	
+
+	
     <?php $comments->listComments(); ?>
     <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
 	</div>
@@ -63,11 +74,15 @@ echo $commentClass;
     <?php if($this->allow('comment')): ?>
 	
 
+	
+<div class="mdui-dialog" id="pinglun">
+
+
     <div id="<?php $this->respondId(); ?>" class="respond">
 	
 
 	
-		<div class="mdui-card mdui-shadow-0 mdui-hoverable mdui-m-a-1 mdui-p-a-2">
+		<div class="mdui-card mdui-shadow-0 mdui-m-a-1 mdui-p-a-2">
     	<h3><?php _e('添加新评论'); ?></h3>
     	<form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
             <?php if($this->user->hasLogin()): ?>
@@ -91,6 +106,37 @@ echo $commentClass;
 
     	</form>
     </div>
+
+
+
+
+
+
+
+
+</div>
+
+<script>
+  var tab = new mdui.Tab('#example4-tab');
+  document.getElementById('example-4').addEventListener('open.mdui.dialog', function () {
+    tab.handleUpdate();
+  });
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
     <?php else: ?>

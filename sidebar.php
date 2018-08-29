@@ -1,19 +1,19 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div class=" mdui-text-left mdui-row-xs-3 mdui-row-md-5 mdui-m-a-2">
-  <div class="mdui-divider"></div>
+<div class=" mdui-text-left mdui-row-xs-3 mdui-row-md-3 mdui-m-a-3">
+
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>
-    <section class="mdui-col mdui-typo  mdui-hidden-sm-down">
+    <!--section class="mdui-col mdui-typo  mdui-hidden-sm-down">
 
         <ul class="widget-list">
 		<div  class="mdui-typo-title"><?php _e('最新文章'); ?></div>
             <?php $this->widget('Widget_Contents_Post_Recent')
             ->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
         </ul>
-    </section>
+    </section-->
     <?php endif; ?>
 
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
-    <section class="mdui-col mdui-typo  mdui-hidden-sm-down">
+    <!--section class="mdui-col mdui-typo">
 
         <ul class="widget-list">
 		<div  class="mdui-typo-title"><?php _e('最近回复'); ?></div>
@@ -22,7 +22,7 @@
             <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?></a>: <?php $comments->excerpt(35, '...'); ?></li>
         <?php endwhile; ?>
         </ul>
-    </section>
+    </section-->
     <?php endif; ?>
 
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)): ?>

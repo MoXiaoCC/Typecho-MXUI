@@ -27,10 +27,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	<div class="mdui-col-xs-12 mdui-text-center ">
 		<?php while($this->next()): ?>
 
-		<div  class="mdui-text-color-white   mdui-m-t-1" style="background-image: url('<?php showThumbnail($this); ?>');background-repeat: no-repeat;width:100%;background-position:center center; ">
+		<div  class="mdui-text-color-white  mdui-m-t-1 mdui-shadow-0 mdui-hoverable" style="background-image: url('<?php showThumbnail($this); ?>');background-repeat: no-repeat;width:100%;background-position:center center;border-radius: 5px; ">
 			
 
-			<div  class="" style="background-image: url('<?php $this->options->themeUrl('/img/hei50.png'); ?>');background-repeat: no-repeat;width:100%;background-position:center center;">
+			<div  class="" style="background-image: url('<?php $this->options->themeUrl('/img/hei50.png'); ?>');background-repeat: no-repeat;width:100%;background-position:center center;border-radius: 5px;">
 
 			<?php if($this->options->slimg && 'guanbi'==$this->options->slimg): ?>
 			<?php else: ?>
@@ -55,7 +55,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 		
 	<?php endwhile; ?>
 
-	<div class=" mdui-text-center mdui-m-a-2"> 
+	<div class=" mdui-text-center mdui-m-a-2 mdui-typo-title"> 
 
 	<?php $this->pageNav('上一页', '下一页',10,'',array('wrapTag' => 'div', 'wrapClass' => 'pagenav','itemTag' => '','currentClass' => 'current',)); ?>
 
@@ -82,8 +82,4 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 
-</body><!-- end #body -->
-	<script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script>
-
-</html>
 

@@ -32,7 +32,7 @@
         <?php endif; ?>
 
 			<div class="mdui-typo-body-1-opacity  mdui-text-center mdui-p-a-5">
-			<a class="mdui-text-color-white" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a>
+			<a class="mdui-typo-title mdui-text-color-white" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a>
 				<p>
 				<a class="mdui-text-color-white" href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a>在<time datetime="<?php $this->date('c'); ?>"><?php $this->date(); ?></time>发表到<?php $this->category(','); ?>，浏览量: <?php get_post_view($this) ?>
 				</p>

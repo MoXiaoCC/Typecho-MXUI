@@ -46,4 +46,8 @@
 </footer><!-- end #footer -->
 
 <?php $this->footer(); ?>
+</body><!-- end #body -->
+	<script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script>
+
+</html>
 

@@ -19,8 +19,8 @@
 
 
 	
-	
-	<link rel="stylesheet" href="<?php $this->options->themeUrl('css/mdui.min.css'); ?>">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
+<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
@@ -43,25 +43,30 @@ ul{
 }
 .pagenav a {letter-spacing:8px;}
 a.next{letter-spacing:1px;}
-img{max-height:200px;}
+img{
+	max-width:80%;   
+	max-height:400px;   
+	margin:0 auto;
+    display: block;}
 
 
 
 
 </style>
-<body class="mdui-theme-accent-blue">
+
 <!--[if lt IE 8]>
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 
 <header>
+<body class="mdui-theme-accent-blue">
 
-
-<div class="mdui-toolbar">
+<div class="mdui-toolbar mdui-shadow-0">
   <span class="mdui-typo-title">
             <?php if ($this->options->logoUrl): ?>
                 <a  href="<?php $this->options->siteUrl(); ?>">
-                    <img src="<?php $this->options->logoUrl() ?>"  height="70" alt="<?php $this->options->title() ?>"/>
+                    <img src="<?php $this->options->logoUrl() ?>"  height="30" alt="<?php $this->options->title() ?>"/>
+					
                 </a>
             <?php else: ?>
                 <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
@@ -69,14 +74,15 @@ img{max-height:200px;}
             <?php endif; ?>
   
   </span>
-  <div class="mdui-toolbar-spacer"></div>
+  <div class="mdui-toolbar-spacer" style=""></div>
 
 	   <a<?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
        <?php while($pages->next()): ?>
        <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
                     <?php endwhile; ?>
-  <a href="javascript:;" class="mdui-btn mdui-btn-icon "  mdui-dialog="{target: '#exampleDialog'}"><i class="mdui-icon material-icons">search</i></a>
+  <a href="javascript:;" class="mdui-btn mdui-btn-icon "  mdui-dialog="{target: '#exampleDialog'}"><i class="mdui-icon material-icons ">search</i></a>
+
 
 </div>
 
@@ -88,15 +94,15 @@ img{max-height:200px;}
   
   <div class="mdui-row">
 
-            <div class="mdui-text-center" style="width:90%;">
+            <div class="mdui-text-center">
                 <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
 				
 				<div class="mdui-textfield">
 				<div class="mdui-col-xs-7  mdui-col-offset-xs-1">
 				  <input class="mdui-textfield-input text" placeholder="<?php _e('输入关键字搜索'); ?>" type="text" id="s" name="s"  />
 				</div>
-				<div class="">
-				  <button class="mdui-btn mdui-color-red mdui-ripple submit"  type="submit"><?php _e('搜索'); ?></button>
+				<div class="mdui-col-xs-3">
+				  <button class="mdui-btn mdui-color-theme-accent mdui-ripple submit"  type="submit"><?php _e('搜索'); ?></button>
 				</div>
 				
 				</div>
