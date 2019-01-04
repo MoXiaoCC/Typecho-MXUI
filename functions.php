@@ -136,11 +136,30 @@ echo $ctu;
 
 
 
-
-
-
-
-
+//by boke8.net
+function boke8GetIdPosts($id){
+	if($id){
+		$getid = explode(',',$id);	
+		$db = Typecho_Db::get();
+		$result = $db->fetchAll($db->select()->from('table.contents')
+			->where('status = ?','publish')
+			->where('type = ?', 'post')
+			->where('cid in ?',$getid)
+			->order('cid', Typecho_Db::SORT_DESC)		
+		);
+		if($result){
+			$i=1;
+			foreach($result as $val){				
+				$val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+				$post_title = htmlspecialchars($val['title']);
+				$permalink = $val['permalink'];
+				echo ' <div class="mdui-card-media mdui-valign" style="background-color:#233333;width:100%;height:100px;border-radius: 10px;"><a href="'.$permalink.'" class="mdui-text-color-white mdui-center" title="'.$post_title.'" target="_blank" style="font-size:20px;">【置顶】'.$post_title.'</a></div>';
+			}
+		}
+	}else{
+		echo '请设置要调用的文章ID';
+	}
+}
 
 
 

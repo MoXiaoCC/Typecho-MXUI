@@ -16,6 +16,12 @@
 
 
 
+
+
+
+
+
+
          <div class="mdui-typo mdui-shadow-0 mdui-m-a-1 mdui-p-a-1" style="text-align:left;">  
 		 <?php $this->content(); ?>
 		 </div>

@@ -1,18 +1,20 @@
+ <div class="mdui-divider"></div>
 
 
 
-  <div class="mdui-divider"></div>
 
 <footer class="mdui-center mdui-typo mdui-p-b-2 mdui-p-t-3">
 
 <div class="mdui-typo-body-1 mdui-text-center">
+
+  
+<p id="hitokoto">:D 获取中...</p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 
 	    <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> &copy; 2017-<?php echo date('Y'); ?>  .
 	   	<br>
 	<span id="span_dt_dt"></span><br>
 
 	 <?php _e('Use <a href="http://www.typecho.org">Typecho</a>'); ?>. Theme by <a href="https://www/moxiao.cc/">MoXiao </a>.
-
 
 
 	<script language="javascript">
@@ -43,7 +45,14 @@
 </div>
 <!--统计代码结束-->
 
+
+<div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99;">
+    <a href="https://myssl.com/www.moxiao.cc?from=mysslid"><img src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
+</div>
+
 </footer><!-- end #footer -->
+
+
 
 <?php $this->footer(); ?>
 </body><!-- end #body -->

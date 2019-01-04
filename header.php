@@ -32,7 +32,7 @@
 </head>
 <style>
 
-a{color: #FF00FF ;text-decoration: none;}
+a{color: #0000ff ;text-decoration: none;}
 
 body{max-width:1000px; margin:0 auto;}
 li{list-style-type:none;}
@@ -50,7 +50,44 @@ img{
     display: block;}
 
 
+ .page-navigator {
+	background: #ffffff;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
 
+.page-navigator li {
+    display: inline;
+}
+
+.page-navigator li:last-child {
+    margin-right: 0;
+}
+
+.page-navigator li a {
+    min-width: 36px;
+    height: 36px;
+    border: 1px solid #999;
+    display: inline-block;
+    border-radius: 18px;
+    line-height: 36px;
+    margin-right: 8px;
+    color: #666;
+}
+
+.page-navigator li a:hover {
+    border-color: #333;
+    color: #333;
+}
+
+.page-navigator li.current a {
+    color: #FFF;
+    background: #999;
+}
+ 
+ 
 
 </style>
 
@@ -59,6 +96,19 @@ img{
 <![endif]-->
 
 <header>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?91e08d28ed47cfb57871d944d4fc1edc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
 <body class="mdui-theme-accent-blue">
 
 <div class="mdui-toolbar mdui-shadow-0">
