@@ -41,10 +41,18 @@ ul{
     padding: 0;
     list-style: none;
 }
+
+ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
 .pagenav a {letter-spacing:8px;}
 a.next{letter-spacing:1px;}
 img{
-	max-width:80%;   
+	max-width:100%;   
 	max-height:400px;   
 	margin:0 auto;
     display: block;}
@@ -135,7 +143,6 @@ var _hmt = _hmt || [];
 
 
 </div>
-
 
 
 <!--对话框开始-->

@@ -153,7 +153,7 @@ function boke8GetIdPosts($id){
 				$val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
 				$post_title = htmlspecialchars($val['title']);
 				$permalink = $val['permalink'];
-				echo ' <div class="mdui-card-media mdui-valign" style="background-color:#233333;width:100%;height:100px;border-radius: 10px;"><a href="'.$permalink.'" class="mdui-text-color-white mdui-center" title="'.$post_title.'" target="_blank" style="font-size:20px;">【置顶】'.$post_title.'</a></div>';
+				echo ' <div class="mdui-card-media mdui-valign" style="background-color:#233333;width:100%;height:100px;border-radius: 5px;"><a href="'.$permalink.'" class="mdui-text-color-white mdui-center" title="'.$post_title.'" target="_blank" style="font-size:20px;">【置顶】'.$post_title.'</a></div>';
 			}
 		}
 	}else{
