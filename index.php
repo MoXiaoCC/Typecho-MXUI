@@ -14,14 +14,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
  ?>
 
-
-
-
-
 <div class="row mdui-m-a-1">
  
 
- 
   <?php boke8GetIdPosts('73,0');?>
   
  <div class="mdui-row-md-3 mdui-row-xs-1 mdui-row-sm-2">
@@ -38,22 +33,21 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 					<?php endif; ?>
 					<?php endif; ?>
 
-<a class="" href="<?php $this->permalink() ?>" target="_blank">
-<div class="mdui-card mdui-hoverable" style="border-radius: 5px;">
-  <div class="mdui-card-media"style="background-image: url('<?php showThumbnail($this); ?>');
-background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:180px">
-
-  </div>
-  <div class="mdui-card-actions">
-  		
-		<span class="mdui-typo-caption-opacity"><?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
-		浏览量: <?php get_post_view($this) ?>
-		</span><br>
-		<p class="mdui-typo-subheading-opacity mdui-text-truncate" style="max-width: 100%;"><strong><?php $this->sticky(); $this->title() ?><strong></p>
-
-  </div>
-</div>
-</a>		
+	<a class="" href="<?php $this->permalink() ?>">
+		<div class="mdui-card mdui-hoverable" style="border-radius: 5px;">
+			  <div class="mdui-card-media"style="background-image: url('<?php showThumbnail($this); ?>');
+			background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:130px">
+			  </div>
+		  <div class="mdui-card-actions">
+				<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;"><strong><?php $this->sticky(); $this->title() ?></strong>
+				</div>
+				<div class="mdui-typo-caption-opacity">
+				<?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
+				浏览量: <?php get_post_view($this) ?>
+				</div>
+		  </div>
+		</div>
+	</a>		
 </div>
 	
 	<?php endwhile; ?>
@@ -63,7 +57,7 @@ background-size: cover;background-repeat: no-repeat;background-position:center c
 
 
 <!--样式来源canwu.pro-->
-	<div class=" mdui-text-center mdui-m-a-2 mdui-typo-title"> 
+	<div class=" mdui-text-center mdui-m-a-3 mdui-typo-title"> 
 
 	<?php $this->pageNav('<<', '>>',10,'',array('wrapTag' => 'ol', 'wrapClass' => 'page-navigator','itemTag' => 'li','currentClass' => 'current',)); ?>
 
