@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
+<div id="pjax-container">
 <div class="mdui-m-a-1">
 
     <article>
@@ -21,6 +21,7 @@
 	
     <?php $this->need('comments.php'); ?>
 </div><!-- end #main-->
+</div>
 
-<?php $this->need('sidebar.php'); ?>
+<!--?php $this->need('sidebar.php'); ?-->
 <?php $this->need('footer.php'); ?>
