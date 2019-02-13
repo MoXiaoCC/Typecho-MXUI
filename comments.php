@@ -52,7 +52,7 @@
 
 
 
-<div id="comments">
+<div id="comments"  style="background-color:#ffffff;">
     <div class="mdui-divider"></div>
     <?php $this->comments()->to($comments); ?>
     <?php if ($comments->have()): ?>
@@ -79,18 +79,10 @@
             <?php if($this->user->hasLogin()): ?>
 
 			<?php _e('登录身份: '); ?>
-			<a href="<?php $this->options->profileUrl(); ?>" target="_blank"><?php $this->user->screenName(); ?></a> 
+			<a href="<?php $this->options->profileUrl(); ?>"  ><?php $this->user->screenName(); ?></a> 
 			<a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a>
 			
-    		<div class="mdui-textfield mdui-textfield-floating-label">
-                <label for="textarea" class="required mdui-textfield-label"><?php _e('点击输入内容'); ?></label>
-                <textarea name="text" id="textarea" class="textarea mdui-textfield-input" required><?php $this->remember('text'); ?></textarea>
-            </div>
-			<div>
 
-					<div class="mdui-float-right"><?php $comments->cancelReply(); ?>&nbsp;&nbsp;&nbsp;<button type="submit" class="submit mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('提交评论'); ?></button></div>
-			
-            </div>
 			
 
 			
@@ -101,9 +93,9 @@
 			
             <?php else: ?>
 			
-			您还没登录，请先 <a href="<?php $this->options->adminUrl('login.php'); ?>" target="_blank"><?php _e('登录|注册'); ?></a>
 			
-			<!--div class="mdui-row">
+			
+			<div class="mdui-row">
     		<div class="mdui-textfield mdui-textfield-floating-label mdui-col-xs-4">
                 <label for="author" class="required mdui-textfield-label"><?php _e('称呼'); ?></label>
     			<input type="text" name="author" id="author" class="text mdui-textfield-input" value="<?php $this->remember('author'); ?>" required />
@@ -118,9 +110,18 @@
                 <label for="url"<?php if ($this->options->commentsRequireURL): ?> class="required mdui-textfield-label"<?php endif; ?>><?php _e('网站'); ?></label>
     			<input type="url" name="url" id="url" class="text mdui-textfield-input" type="email" placeholder="<?php _e('http://'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
     		</div>
-			</div-->
+			</div>
+              		
             <?php endif; ?>
+			<div class="mdui-textfield mdui-textfield-floating-label">
+                <label for="textarea" class="required mdui-textfield-label"><?php _e('点击输入内容'); ?></label>
+                <textarea name="text" id="textarea" class="textarea mdui-textfield-input" required><?php $this->remember('text'); ?></textarea>
+            </div>
+			<div>
+
+					<div class="mdui-float-right"><?php $comments->cancelReply(); ?>&nbsp;&nbsp;&nbsp;<button type="submit" class="submit mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('提交评论'); ?></button></div>
 			
+            </div>
 			
 			
 
