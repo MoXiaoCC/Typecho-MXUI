@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
+<div id="pjax-container">
 <div class="row mdui-text-center mdui-m-a-1  ">
 <div class="mdui-row mdui-m-a-1">
 
@@ -30,16 +30,17 @@
 <a class="" href="<?php $this->permalink() ?>">
 <div class="mdui-card mdui-hoverable" style="border-radius: 5px;">
   <div class="mdui-card-media"style="background-image: url('<?php showThumbnail($this); ?>');
-background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:180px">
+background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:130px">
 
   </div>
-  <div class="mdui-card-actions">
-		
-  		<span class="mdui-typo-caption-opacity"><?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
-		浏览量: <?php get_post_view($this) ?></span>
-		<p class="mdui-typo-subheading-opacity mdui-text-truncate" style="max-width: 100%;"><strong><?php $this->sticky(); $this->title() ?><strong></p>
-
-  </div>
+		  <div class="mdui-card-actions">
+				<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;"><strong><?php $this->sticky(); $this->title() ?></strong>
+				</div>
+				<div class="mdui-typo-caption-opacity">
+				<?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
+				浏览量: <?php get_post_view($this) ?>
+				</div>
+		  </div>
 </div>
 </a>		
 </div>
@@ -71,7 +72,7 @@ background-size: cover;background-repeat: no-repeat;background-position:center c
 </div><!-- end #main -->
 </div><!-- end #main -->
 	
-		
+</div>
 	<!--?php $this->need('sidebar.php'); ?-->
 
 	<?php $this->need('footer.php'); ?>
