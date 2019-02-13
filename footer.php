@@ -1,26 +1,36 @@
- <div class="mdui-divider"></div>
-
-
-
+<div class="mdui-divider"></div>
 
 <footer class="mdui-center mdui-typo mdui-p-b-2 mdui-p-t-3">
 
 <div class="mdui-typo-body-1 mdui-text-center">
 
-  
-<p id="hitokoto">:D 获取中...</p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-
-	    <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> &copy; 2017-<?php echo date('Y'); ?>  .
-	   	<br>
-	<span id="span_dt_dt"></span><br>
-
-	 <?php _e('Use <a href="http://www.typecho.org">Typecho</a>'); ?>. Theme by <a href="https://www/moxiao.cc/">MoXiao </a>.
 
 
+<a href="#top"><button class="mdui-fab mdui-fab-fixed mdui-ripple"><i class="mdui-icon material-icons">&#xe5d8;</i></button></a>
+
+
+
+	<!-- 每日一言api开始 -->
+	<p id="hitokoto">:D 获取中...</p>
+	<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+	<!-- 每日一言api结束 -->
+	<a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> &copy; 2017-<?php echo date('Y'); ?>  .
+	<a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->beian(); ?></a>
+	<br>
+	<span id="span_dt_dt"></span><br><!-- 计时引用 -->
+	
+	<!-- 版权开始 -->
+	<p class="mdui-typo-caption-opacity">
+	<?php _e('Use <a href="http://www.typecho.org" target="_blank">Typecho</a> And <a href="http://www.mdui.org" target="_blank">MDUI</a>'); ?>. 
+	Theme by <a href="https://www.moxiao.cc/" target="_blank">MoXiao </a>.
+	</p>
+	<!-- 版权结束 -->
+
+	<!-- 计时js开始 -->
 	<script language="javascript">
 	function show_date_time(){
 	window.setTimeout("show_date_time()", 1000);
-	BirthDay=new Date("01/17/2018 00:00:00");//这个日期是可以修改的
+	BirthDay=new Date("<?php $this->options->webtime() ?> 00:00:00");//这个日期是可以修改的
 	today=new Date();
 	timeold=(today.getTime()-BirthDay.getTime());
 	sectimeold=timeold/1000
@@ -37,26 +47,22 @@
 	}
 	show_date_time();
 	</script>
-	
+	<!-- 计时js结束 -->
 </div>
+
 <!--统计代码开始-->
 <div style="display:none">
-<script src="https://s19.cnzz.com/z_stat.php?id=1263256397&web_id=1263256397" language="JavaScript"></script>
+<?php $this->options->tongji(); ?>
 </div>
 <!--统计代码结束-->
 
-
-<div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99;">
-    <a href="https://myssl.com/www.moxiao.cc?from=mysslid"><img src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
-</div>
-
-</footer><!-- end #footer -->
-
-
+</footer>
+<!-- end #footer -->
 
 <?php $this->footer(); ?>
+
+<script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script><!-- 引入mdui的js -->
+
+
 </body><!-- end #body -->
-	<script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script>
-
 </html>
-
