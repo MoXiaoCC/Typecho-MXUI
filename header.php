@@ -7,7 +7,7 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.9, user-scalable=no">
 	
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
@@ -32,9 +32,15 @@
 </head>
 <style>
 
+  
 a{color: #0000ff ;text-decoration: none;}
 
-body{max-width:1000px; margin:0 auto;}
+body{
+  max-width:900px;
+  margin:0 auto;
+ 
+  }
+  .video{width:100%;height:500px;margin:0 auto;}
 li{list-style-type:none;}
 ul{
     margin: 0;
@@ -96,6 +102,13 @@ img{
 }
  
  
+img{
+	cursor: pointer;
+	transition: all 0.6s;
+	}
+img:hover{
+	transform: scale(1.0);
+}
 
 </style>
 
@@ -105,41 +118,30 @@ img{
 
 <header>
 
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?91e08d28ed47cfb57871d944d4fc1edc";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
 <body class="mdui-theme-accent-blue">
 
-<div class="mdui-toolbar mdui-shadow-0">
-  <span class="mdui-typo-title">
-            <?php if ($this->options->logoUrl): ?>
-                <a  href="<?php $this->options->siteUrl(); ?>">
-                    <img src="<?php $this->options->logoUrl() ?>"  height="30" alt="<?php $this->options->title() ?>"/>
-					
-                </a>
-            <?php else: ?>
-                <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
+<div class="mdui-toolbar mdui-shadow-0" id="process-container">
+	<!-- logo或网站名开始 -->
+	<span class="mdui-typo-title">
+		<?php if ($this->options->logoUrl): ?>
+			<a  href="<?php $this->options->siteUrl(); ?>">
+			<img src="<?php $this->options->logoUrl() ?>"  height="30" alt="<?php $this->options->title() ?>"/>
+			</a>
+			<?php else: ?>
+			<a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
+			<?php endif; ?>
+	</span>
+	<!-- logo或网站名开始结束 -->
+	
 
-            <?php endif; ?>
-  
-  </span>
-  <div class="mdui-toolbar-spacer" style=""></div>
+<div class="mdui-toolbar-spacer"></div>
 
 	   <a<?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
        <?php while($pages->next()): ?>
        <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
-                    <?php endwhile; ?>
-  <a href="javascript:;" class="mdui-btn mdui-btn-icon "  mdui-dialog="{target: '#exampleDialog'}"><i class="mdui-icon material-icons ">search</i></a>
+        <?php endwhile; ?>
+	<a href="javascript:;" class="mdui-btn mdui-btn-icon "  mdui-dialog="{target: '#exampleDialog'}"><i class="mdui-icon material-icons ">search</i></a>
 
 
 </div>
