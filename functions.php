@@ -5,7 +5,25 @@ function themeConfig($form) {
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($logoUrl);
     
-    $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
+
+	$dashang = new Typecho_Widget_Helper_Form_Element_Text('dashang', NULL, NULL, _t('打赏二维码url'), _t('在这里填入打赏二维码的链接'));
+    $form->addInput($dashang);
+
+	
+	$webtime = new Typecho_Widget_Helper_Form_Element_Text('webtime', NULL, NULL, _t('建站时间'), _t('格式：01/17/2018'));
+    $form->addInput($webtime);
+
+	
+	$beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('备案信息'), _t('这里填写备案信息'));
+    $form->addInput($beian);
+
+		
+	$tongji = new Typecho_Widget_Helper_Form_Element_Text('tongji', NULL, NULL, _t('统计代码'), _t('例如：< script src="https://s19.cnzz.com/z_stat.php?id=1263256397&web_id=1263256397" language="JavaScript">< /script >'));
+    $form->addInput($tongji);
+
+	
+	
+/*     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
     array('ShowRecentPosts' => _t('显示最新文章'),
     'ShowRecentComments' => _t('显示最近回复'),
     'ShowCategory' => _t('显示分类'),
@@ -14,7 +32,7 @@ function themeConfig($form) {
     array('ShowRecentPosts', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'), _t('侧边栏显示'));
     
     $form->addInput($sidebarBlock->multiMode());
-	
+	 */
 	
 	
 $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
@@ -45,8 +63,14 @@ function themeFields($layout) {
 
 // 自定义关键字
 function themeFields($layout) {
+
+/*     $videoUrl = new Typecho_Widget_Helper_Form_Element_Text('videoUrl', NULL, NULL, _t('视频链接'), _t('填入视频链接自动适配'));
+    $layout->addItem($videoUrl); */
+	
     $thumb = new Typecho_Widget_Helper_Form_Element_Text('thumb', NULL, NULL, _t('自定义缩略图'), _t('输入缩略图地址(仅文章有效)'));
     $layout->addItem($thumb);
+	
+	
 }
 /** 输出文章缩略图 */
 function showThumbnail($widget)
@@ -153,7 +177,7 @@ function boke8GetIdPosts($id){
 				$val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
 				$post_title = htmlspecialchars($val['title']);
 				$permalink = $val['permalink'];
-				echo ' <div class="mdui-card-media mdui-valign" style="background-color:#233333;width:100%;height:100px;border-radius: 5px;"><a href="'.$permalink.'" class="mdui-text-color-white mdui-center" title="'.$post_title.'" target="_blank" style="font-size:20px;">【置顶】'.$post_title.'</a></div>';
+				echo ' <div class="mdui-card-media mdui-valign mdui-hoverable mdui-shadow-1" style="background-image: url(https://bing.ioliu.cn/v1);background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:70px;border-radius: 5px;"><a href="'.$permalink.'" class="mdui-center mdui-typo-body-2 mdui-text-color-white-text" title="'.$post_title.'"   style="font-size:20px;"><strong>【置顶】'.$post_title.'</strong></a></div>';
 			}
 		}
 	}else{
@@ -192,3 +216,7 @@ array_push($views, $cid);
 	}
 	echo $row['views'];
 }
+
+
+
+
