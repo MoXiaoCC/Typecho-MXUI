@@ -17,7 +17,7 @@
     $comments->alt(' comment-odd', ' comment-even');
     echo $commentClass;
     ?>">
-<div class="mdui-row mdui-p-t-2 mdui-hoverable">
+<div class="mdui-row mdui-p-t-2 mdui-m-l-2 mdui-m-r-2 mdui-hoverable">
 <div id="<?php $comments->theId(); ?>">
 	  <div class="mdui-col-xs-2 mdui-col-md-1">
 		<?php $comments->gravatar('40', ''); ?>
@@ -52,12 +52,12 @@
 
 
 
-<div id="comments"  style="background-color:#ffffff;">
-    <div class="mdui-divider"></div>
+<div class="mdui-p-t-1" id="comments"  style="background-color:#ffffff;">
+
     <?php $this->comments()->to($comments); ?>
     <?php if ($comments->have()): ?>
-	<h3><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></h3>
-    
+	<h3 class="mdui-p-l-5 mdui-p-a-1"><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></h3>
+        <div class="mdui-divider"></div>
     <?php $comments->listComments(); ?>
 		
 
@@ -66,8 +66,8 @@
     <?php endif; ?>
 
     <?php if($this->allow('comment')): ?>
-	    <div class="mdui-divider"></div>
-    <div id="<?php $this->respondId(); ?>" class="respond mdui-p-a-2">
+	        <div class="mdui-divider"></div>
+    <div id="<?php $this->respondId(); ?>" class="respond mdui-m-t-1 mdui-p-a-2">
 
 
     	<h3 id="response" class="mdui-p-l-2"><?php _e('添加新评论'); ?>
@@ -82,19 +82,8 @@
 			<a href="<?php $this->options->profileUrl(); ?>"  ><?php $this->user->screenName(); ?></a> 
 			<a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a>
 			
-
-			
-
-			
-			
-			
-			
-
-			
             <?php else: ?>
-			
-			
-			
+
 			<div class="mdui-row">
     		<div class="mdui-textfield mdui-textfield-floating-label mdui-col-xs-4">
                 <label for="author" class="required mdui-textfield-label"><?php _e('称呼'); ?></label>

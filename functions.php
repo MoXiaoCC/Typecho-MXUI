@@ -10,6 +10,15 @@ function themeConfig($form) {
     $form->addInput($dashang);
 
 	
+	$top_post_url = new Typecho_Widget_Helper_Form_Element_Text('top_post_url', NULL, NULL, _t('置顶文章链接'), _t('如果不需要置顶，可以删除或注释掉index.php第19-25行代码'));
+    $form->addInput($top_post_url);
+	
+	$top_tittle = new Typecho_Widget_Helper_Form_Element_Text('top_tittle', NULL, NULL, _t('置顶文章标题'));
+    $form->addInput($top_tittle);
+	
+	$top_img_url = new Typecho_Widget_Helper_Form_Element_Text('top_img_url', NULL, NULL, _t('置顶文章背景图url'), _t('Bing每日一图api：例如： https://api.dujin.org/bing/1366.php '));
+    $form->addInput($top_img_url);
+	
 	$webtime = new Typecho_Widget_Helper_Form_Element_Text('webtime', NULL, NULL, _t('建站时间'), _t('格式：01/17/2018'));
     $form->addInput($webtime);
 
@@ -158,32 +167,6 @@ echo $ctu;
 }
 
 
-
-
-//by boke8.net
-function boke8GetIdPosts($id){
-	if($id){
-		$getid = explode(',',$id);	
-		$db = Typecho_Db::get();
-		$result = $db->fetchAll($db->select()->from('table.contents')
-			->where('status = ?','publish')
-			->where('type = ?', 'post')
-			->where('cid in ?',$getid)
-			->order('cid', Typecho_Db::SORT_DESC)		
-		);
-		if($result){
-			$i=1;
-			foreach($result as $val){				
-				$val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
-				$post_title = htmlspecialchars($val['title']);
-				$permalink = $val['permalink'];
-				echo ' <div class="mdui-card-media mdui-valign mdui-hoverable mdui-shadow-1" style="background-image: url(https://bing.ioliu.cn/v1);background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:70px;border-radius: 5px;"><a href="'.$permalink.'" class="mdui-center mdui-typo-body-2 mdui-text-color-white-text" title="'.$post_title.'"   style="font-size:20px;"><strong>【置顶】'.$post_title.'</strong></a></div>';
-			}
-		}
-	}else{
-		echo '请设置要调用的文章ID';
-	}
-}
 
 
 

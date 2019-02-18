@@ -31,17 +31,17 @@
     <?php $this->header(); ?>
 </head>
 <style>
-
-  
 a{color: #0000ff ;text-decoration: none;}
 
 body{
   max-width:900px;
   margin:0 auto;
- 
+  background-color:#f0f0f0;
   }
   .video{width:100%;height:500px;margin:0 auto;}
+  
 li{list-style-type:none;}
+
 ul{
     margin: 0;
     padding: 0;
@@ -56,7 +56,9 @@ ol{
 
 
 .pagenav a {letter-spacing:8px;}
+
 a.next{letter-spacing:1px;}
+
 img{
 	max-width:100%;   
 	max-height:400px;   
@@ -65,7 +67,6 @@ img{
 
 
  .page-navigator {
-	background: #ffffff;
     list-style: none;
     padding: 0;
     margin: 10px 0;
@@ -101,14 +102,6 @@ img{
     background: #999;
 }
  
- 
-img{
-	cursor: pointer;
-	transition: all 0.6s;
-	}
-img:hover{
-	transform: scale(1.0);
-}
 
 </style>
 
@@ -118,9 +111,9 @@ img:hover{
 
 <header>
 
-<body class="mdui-theme-accent-blue">
+<body class="mdui-theme-accent-indigo">
 
-<div class="mdui-toolbar mdui-shadow-0" id="process-container">
+<div class="mdui-toolbar mdui-shadow-0" id="process-container" style="background-color:#ffffff;">
 	<!-- logo或网站名开始 -->
 	<span class="mdui-typo-title">
 		<?php if ($this->options->logoUrl): ?>

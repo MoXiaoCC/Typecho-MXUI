@@ -1,11 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-<div id="pjax-container">
-<div class="row mdui-text-center mdui-m-a-1  ">
-<div class="mdui-row mdui-m-a-1">
 
-			
- <div class="mdui-row-md-3 mdui-row-xs-1 mdui-row-sm-2">
+<div class="mdui-text-center">
+
+<div class="mdui-row mdui-m-a-1">
         <h3 class="archive-title"><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
@@ -15,7 +13,8 @@
 		</h3>
 		
 	
-		
+ <div class="mdui-row-md-3 mdui-row-xs-1 mdui-row-sm-2">
+
         <?php if ($this->have()): ?>
     	<?php while($this->next()): ?>
 			
@@ -27,22 +26,22 @@
 					<?php endif; ?>
 					<?php endif; ?>
 
-<a class="" href="<?php $this->permalink() ?>">
-<div class="mdui-card mdui-hoverable" style="border-radius: 5px;">
-  <div class="mdui-card-media"style="background-image: url('<?php showThumbnail($this); ?>');
-background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:130px">
+	<a class="" href="<?php $this->permalink() ?>">
+	<div class="mdui-card mdui-shadow-0 mdui-hoverable" style="border-radius: 5px;">
+	  <div class="mdui-card-media"style="background-image: url('<?php showThumbnail($this); ?>');
+	background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:130px">
 
-  </div>
-		  <div class="mdui-card-actions">
-				<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;"><strong><?php $this->sticky(); $this->title() ?></strong>
-				</div>
-				<div class="mdui-typo-caption-opacity">
-				<?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
-				浏览量: <?php get_post_view($this) ?>
-				</div>
-		  </div>
-</div>
-</a>		
+	  </div>
+			  <div class="mdui-card-actions">
+					<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;"><strong><?php $this->sticky(); $this->title() ?></strong>
+					</div>
+					<div class="mdui-typo-caption-opacity">
+					<?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
+					浏览量: <?php get_post_view($this) ?>
+					</div>
+			  </div>
+	</div>
+	</a>		
 </div>
 			
 
@@ -59,21 +58,21 @@ background-size: cover;background-repeat: no-repeat;background-position:center c
 
 
 		</div>	
+
+
+	
+</div><!-- end #main -->
+</div><!-- end #main -->
 <!--样式来源canwu.pro-->
-	<div class=" mdui-text-center mdui-p-a-3 mdui-typo-title"> 
+<div  class="mdui-m-a-1" style="border-radius: 5px;background-color:#ffffff;">
+	<div class=" mdui-text-center mdui-p-a-1 mdui-typo-title"> 
 
 	<?php $this->pageNav('<<', '>>',10,'',array('wrapTag' => 'ol', 'wrapClass' => 'page-navigator','itemTag' => 'li','currentClass' => 'current',)); ?>
 
 	</div>	
+</div>	
 	
 <!--样式来源canwu.pro-->
-
-	
-</div><!-- end #main -->
-</div><!-- end #main -->
-	
-</div>
-	<!--?php $this->need('sidebar.php'); ?-->
 
 	<?php $this->need('footer.php'); ?>
 		
