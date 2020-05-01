@@ -19,8 +19,8 @@
 
 
 	
-<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
-<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/mdui.min.css'); ?>">
+<script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script>
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
