@@ -19,8 +19,8 @@
 		  <?php endif;?>
 
 		  </p>
-         <div class="mdui-typo mdui-shadow-0 mdui-m-a-3">   <?php $this->content(); ?>
-
+         <div class="mdui-typo mdui-shadow-0 mdui-m-a-2">
+		 <?php $this->content(); ?>
 		 </div>
     </article>
 

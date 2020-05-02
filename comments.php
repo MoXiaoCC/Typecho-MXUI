@@ -21,8 +21,6 @@
 <div id="<?php $comments->theId(); ?>">
 	  <div class="gravatarimg">
 		<?php $comments->gravatar('40', ''); ?>
-	  </div>
-	<div class="commentc">
 		<span class="mdui-typo-body-1">
             <?php $comments->author(); ?>
             <?php if ($comments->authorId) {
@@ -31,8 +29,11 @@
                 }?>
             <?php }?>
         </span>
+	  </div>
+	<div class="commentc">
+
 		
-        <a href="<?php $comments->permalink(); ?>" class="mdui-typo-body-1 mdui-text-color-black"><?php $comments->date('Y-m-d H:i'); ?></a>
+        <a href="<?php $comments->permalink(); ?>" class="mdui-typo-body-1 commenttime"><?php $comments->date('Y-m-d H:i'); ?></a>
 		<div class="mdui-float-right"><?php $comments->reply(); ?></div>
          
 		<span class="mdui-typo"><?php $comments->content(); ?> </span>
@@ -60,8 +61,7 @@
 	<h3 class="mdui-p-a-1 mdui-text-center"><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></h3>
     <?php $comments->listComments(); ?>
 		
-
-    <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+    <?php $comments->pageNav('&laquo; ', '&raquo;'); ?>
     
     <?php endif; ?>
 

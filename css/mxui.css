@@ -34,7 +34,7 @@ img{
 }
 .mdui-card{
     border-radius: 7px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 5px rgba(22, 9, 218, 0.12);
 }
 
 #comments{
@@ -168,12 +168,12 @@ a.next{letter-spacing:1px;}
 .page-navigator {
     list-style: none;
     padding: 10px;
-    margin: -8px;
+    /* margin: -8px; */
     margin-top: 5px;
     text-align: center;
     background-color: #ffffff;
     border-radius: 7px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03); */
 }
 
 .page-navigator li {
@@ -224,6 +224,7 @@ footer{
 }
 .avatar{
     border-radius: 32px;
+	margin-bottom: 10px;
 }
 .box2 {
     margin: 10px;
@@ -232,4 +233,8 @@ footer{
 .commentc {
     margin-right: 12px;
     /* border-radius: 32px; */
+}
+.commenttime{
+	font-size: 12px;
+	color: #b8b8b8;
 }

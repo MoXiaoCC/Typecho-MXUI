@@ -50,7 +50,7 @@
 
 	  </div>
 			  <div class="mdui-card-actions">
-					<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;"><strong><?php $this->sticky(); $this->title() ?></strong>
+					<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;font-size: 14px;"><strong><?php $this->sticky(); $this->title() ?></strong>
 					</div>
 					<div class="mdui-typo-caption-opacity">
 					<?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>

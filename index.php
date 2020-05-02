@@ -35,7 +35,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 
 <div class="indexcategorylist">
-	<a class="indexcategory" href="<?php $this->options->siteUrl(); ?>"> 全部 </a>
+	<a class="indexcategory" href="<?php $this->options->siteUrl(); ?>index.php/<?php $this->options->siteUrl(); ?>.html"> 全部 </a>
 	<?php $this->widget('Widget_Metas_Category_List')->to($category);?>
 	<?php while ($category->next()):?>
 	<a <?php if($this->is('post')):?>
@@ -68,7 +68,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 			background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:180px">
 			  </div>
 		  <div class="mdui-card-actions">
-				<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;"><strong><?php $this->title() ?></strong>
+				<div class="mdui-typo-subheading-opacity mdui-text-truncate mdui-m-b-1" style="max-width: 100%;color:#000000;font-size: 14px;"><strong><?php $this->title() ?></strong>
 				</div>
 				<div class="mdui-typo-caption-opacity">
 				<?php _e(' 发布时间：'); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>

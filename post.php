@@ -20,7 +20,7 @@
 		  </p>
 
 
-         <div class="mdui-typo mdui-shadow-0 mdui-m-a-3" style="text-align:left;">  
+         <div class="mdui-typo mdui-shadow-0 mdui-m-a-2" style="text-align:left;">  
 
 		 <?php $this->content(); ?>
 		 </div>
