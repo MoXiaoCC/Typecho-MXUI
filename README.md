@@ -1,5 +1,5 @@
 #Typecho-MXUI
-MXUI，一个免费的Typecho主题。欢迎访问我的博客 https://www.moxiao.cc/
+MXUI，一个免费的Typecho主题。欢迎访问我的博客查看效果 https://www.moxiao.cc/
 
 也可以通过github或者这个链接反馈问题和了解更多 https://www.moxiao.cc/73.html
 
