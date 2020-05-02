@@ -2,7 +2,14 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
+
+    echo '<p style="font-size:14px;"><span style="display:block;margin-bottom:10px;margin-top:10px;font-size:18px;color:#233;">欢迎使用MXUI</span>
+    <span style="display:block;margin-bottom:10px;margin-top:10px;color:#999;">Tips：本主题免费无广告，可以通过下方链接下载或联系我。</span>
+    <span style="margin-bottom:10px;display:block"><a href="https://www.moxiao.cc/73.html" target="_blank">更新说明&反馈&建议</a> | <a href="https://github.com/MoXiaoCC/Typecho-MXUI/" target="_blank">GitHub</a></span></p>';
+
+
+
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 不填的话网站logo默认为文字'));
     $form->addInput($logoUrl);
     
 
@@ -10,13 +17,13 @@ function themeConfig($form) {
     $form->addInput($dashang);
 
 	
-	$top_post_url = new Typecho_Widget_Helper_Form_Element_Text('top_post_url', NULL, NULL, _t('置顶文章链接'), _t('如果不需要置顶，可以删除或注释掉index.php第19-25行代码'));
+	$top_post_url = new Typecho_Widget_Helper_Form_Element_Text('top_post_url', NULL, NULL, _t('置顶文章链接'), _t('这里不填首页置顶为空'));
     $form->addInput($top_post_url);
 	
 	$top_tittle = new Typecho_Widget_Helper_Form_Element_Text('top_tittle', NULL, NULL, _t('置顶文章标题'));
     $form->addInput($top_tittle);
 	
-	$top_img_url = new Typecho_Widget_Helper_Form_Element_Text('top_img_url', NULL, NULL, _t('置顶文章背景图url'), _t('Bing每日一图api：例如： https://api.dujin.org/bing/1366.php '));
+	$top_img_url = new Typecho_Widget_Helper_Form_Element_Text('top_img_url', NULL, NULL, _t('置顶文章背景图url'), _t('例如Bing每日一图api： https://site.liuxiaogang.cn/bing '));
     $form->addInput($top_img_url);
 	
 	$webtime = new Typecho_Widget_Helper_Form_Element_Text('webtime', NULL, NULL, _t('建站时间'), _t('格式：01/17/2018'));
@@ -45,19 +52,11 @@ function themeConfig($form) {
 	
 	
 $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
-        'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',
         'Showimg' => '有图文章显示缩略图，无图文章只显示一张固定的缩略图',      
-        'showoff' => '有图文章显示缩略图，无图文章则不显示缩略图',
-        'allsj' => '所有文章一律显示随机缩略图',
-        'guanbi' => '关闭所有缩略图显示'
-    ), 'showon',
-    _t('缩略图设置'), _t('默认选择“有图文章显示缩略图，无图文章随机显示缩略图”'));
+    ), 'showimg',
+    _t('缩略图设置'));
     $form->addInput($slimg->multiMode());
-	
-	
-	
-	
-	
+
 	
 }
 
@@ -73,7 +72,7 @@ function themeFields($layout) {
 // 自定义关键字
 function themeFields($layout) {
 
-/*     $videoUrl = new Typecho_Widget_Helper_Form_Element_Text('videoUrl', NULL, NULL, _t('视频链接'), _t('填入视频链接自动适配'));
+/*  $videoUrl = new Typecho_Widget_Helper_Form_Element_Text('videoUrl', NULL, NULL, _t('视频链接'), _t('填入视频链接自动适配'));
     $layout->addItem($videoUrl); */
 	
     $thumb = new Typecho_Widget_Helper_Form_Element_Text('thumb', NULL, NULL, _t('自定义缩略图'), _t('输入缩略图地址(仅文章有效)'));
@@ -88,15 +87,16 @@ function showThumbnail($widget)
     $dir = './usr/themes/mxui/img/sj/';//随机缩略图目录
     $n=sizeof(scandir($dir))-2;
     if($n <= 0){
-    $n=3;
+    $n=2;
     }// 异常处理，干掉自动判断图片数量的功能，切换至手动
     $rand = rand(1,$n); 
     // 随机 n张缩略图
  
     $random = $widget->widget('Widget_Options')->themeUrl . '/img/sj/' . $rand . '.jpg'; // 随机缩略图路径
+
 if(Typecho_Widget::widget('Widget_Options')->slimg && 'Showimg'==Typecho_Widget::widget('Widget_Options')->slimg
 ){
-  $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.png'; //无图时只显示固定一张缩略图
+  $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.jpg'; //无图时只显示固定一张缩略图
 }
 
 $cai = '';//这里可以添加图片后缀，例如七牛的缩略图裁剪规则，这里默认为空
@@ -171,7 +171,7 @@ echo $ctu;
 
 
 
-
+//无插件记录浏览量
 
 function get_post_view($archive){
 	$cid    = $archive->cid;

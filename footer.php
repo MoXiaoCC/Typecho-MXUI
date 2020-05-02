@@ -1,5 +1,4 @@
-
-<footer class="mdui-center mdui-typo mdui-p-a-1 mdui-p-t-3" style="background-color:#ffffff;">
+<footer class="mdui-center mdui-typo mdui-p-a-1 mdui-p-t-3"">
 
 <div class="mdui-typo-body-1 mdui-text-center">
 
@@ -18,8 +17,9 @@
 	<!-- 每日一言api结束 -->
 
 	<div>
+
 	<a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> &copy; 2017-<?php echo date('Y'); ?>  .
-	<a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->beian(); ?></a>
+	<a href="http://beian.miit.gov.cn/" target="_blank"><?php $this->options->beian(); ?></a>
 	</div>
 	
 	<div id="span_dt_dt"></div><!-- 计时引用 -->
@@ -59,7 +59,6 @@
 	show_date_time();
 	</script>
 	<!-- 计时js结束 -->
-
 
 
 </body><!-- end #body -->

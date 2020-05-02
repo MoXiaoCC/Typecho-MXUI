@@ -1,6 +1,23 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
+<div class="main">
+
+
+<div class="indexcategorylist">
+	<a href="<?php $this->options->siteUrl(); ?>"> 全部 </a>
+	<?php $this->widget('Widget_Metas_Category_List')->to($category);?>
+	<?php while ($category->next()):?>
+	<a <?php if($this->is('post')):?>
+	<?php if($this->category == $category->slug):?>class="indexcategory"<?php endif;?>
+	<?php else:?>
+	<?php if($this->is('category', $category->slug)):?>class="indexcategory"<?php endif;?>
+	<?php endif;?> href="<?php $category->permalink();?>"><?php $category->name();?>
+	</a>
+	<?php endwhile; ?>
+</div>
+
+
 <div class="mdui-text-center">
 
 <div class="mdui-row mdui-m-a-1">
@@ -29,7 +46,7 @@
 	<a class="" href="<?php $this->permalink() ?>">
 	<div class="mdui-card mdui-shadow-0 mdui-hoverable" style="border-radius: 5px;">
 	  <div class="mdui-card-media"style="background-image: url('<?php showThumbnail($this); ?>');
-	background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:130px">
+	background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:180px">
 
 	  </div>
 			  <div class="mdui-card-actions">
@@ -50,7 +67,7 @@
         <?php else: ?>
 		
             <article class="post">
-                <h2 class="post-title"><?php _e('没有找到内容'); ?></h2>
+                <h2 class="post-title" style="margin-top: 100px;margin-bottom: 100px;letter-spacing: 0.25rem;"><?php _e('没有找到内容!'); ?></h2>
             </article>
 			
         <?php endif; ?>
@@ -64,7 +81,7 @@
 </div><!-- end #main -->
 </div><!-- end #main -->
 <!--样式来源canwu.pro-->
-<div  class="mdui-m-a-1" style="border-radius: 5px;background-color:#ffffff;">
+<div  class="mdui-m-a-1" style="border-radius: 5px;">
 	<div class=" mdui-text-center mdui-p-a-1 mdui-typo-title"> 
 
 	<?php $this->pageNav('<<', '>>',10,'',array('wrapTag' => 'ol', 'wrapClass' => 'page-navigator','itemTag' => 'li','currentClass' => 'current',)); ?>
@@ -74,5 +91,7 @@
 	
 <!--样式来源canwu.pro-->
 
-	<?php $this->need('footer.php'); ?>
+</div>
+
+<?php $this->need('footer.php'); ?>
 		

@@ -20,6 +20,7 @@
 
 	
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/mdui.min.css'); ?>">
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/mxui.css'); ?>">
 <script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script>
 
     <!--[if lt IE 9]>
@@ -31,77 +32,6 @@
     <?php $this->header(); ?>
 </head>
 <style>
-a{color: #0000ff ;text-decoration: none;}
-
-body{
-  max-width:900px;
-  margin:0 auto;
-  background-color:#f0f0f0;
-  }
-  .video{width:100%;height:500px;margin:0 auto;}
-  
-li{list-style-type:none;}
-
-ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-ol{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-
-.pagenav a {letter-spacing:8px;}
-
-a.next{letter-spacing:1px;}
-
-img{
-	max-width:100%;   
-	max-height:400px;   
-	margin:0 auto;
-    display: block;}
-
-
- .page-navigator {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    text-align: center;
-}
-
-.page-navigator li {
-    display: inline;
-}
-
-.page-navigator li:last-child {
-    margin-right: 0;
-}
-
-.page-navigator li a {
-    min-width: 36px;
-    height: 36px;
-    border: 1px solid #999;
-    display: inline-block;
-    border-radius: 18px;
-    line-height: 36px;
-    margin-right: 8px;
-    color: #666;
-}
-
-.page-navigator li a:hover {
-    border-color: #333;
-    color: #333;
-}
-
-.page-navigator li.current a {
-    color: #FFF;
-    background: #999;
-}
- 
 
 </style>
 
@@ -109,35 +39,39 @@ img{
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 
-<header>
-
 <body class="mdui-theme-accent-indigo">
 
-<div class="mdui-toolbar mdui-shadow-0" id="process-container" style="background-color:#ffffff;">
-	<!-- logo或网站名开始 -->
-	<span class="mdui-typo-title">
-		<?php if ($this->options->logoUrl): ?>
-			<a  href="<?php $this->options->siteUrl(); ?>">
-			<img src="<?php $this->options->logoUrl() ?>"  height="30" alt="<?php $this->options->title() ?>"/>
-			</a>
-			<?php else: ?>
-			<a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
-			<?php endif; ?>
-	</span>
-	<!-- logo或网站名开始结束 -->
-	
+<header>
+<div class="header">
+    <div class="mdui-toolbar mdui-shadow-0" id="process-container">
 
-<div class="mdui-toolbar-spacer"></div>
+        <span class="mdui-typo-title">
+            <?php if ($this->options->logoUrl): ?>
+                <a href="<?php $this->options->siteUrl(); ?>">
+                <img id="logo" src="<?php $this->options->logoUrl() ?>"  height="30" alt="<?php $this->options->title() ?>"/>
+                </a>
+                <?php else: ?>
+                <a class="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
+                <?php endif; ?>
+        </span>
+        
+        <div class="mdui-toolbar-spacer"></div>
 
-	   <a<?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
-       <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-       <?php while($pages->next()): ?>
-       <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
-        <?php endwhile; ?>
-	<a href="javascript:;" class="mdui-btn mdui-btn-icon "  mdui-dialog="{target: '#exampleDialog'}"><i class="mdui-icon material-icons ">search</i></a>
+        <div class="nav">
+          <a<?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
+          <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+          <?php while($pages->next()): ?>
+          <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+          <?php endwhile; ?>
+          <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#exampleDialog'}"><i class="mdui-icon material-icons ">search</i></a>        
+        </div>
 
+
+
+    </div>
 
 </div>
+
 
 
 <!--对话框开始-->
