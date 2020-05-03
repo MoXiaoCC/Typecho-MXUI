@@ -1,0 +1,245 @@
+/* 全局样式 */
+
+body{
+  margin:0 auto;
+  background-color: #fafafa;
+  overflow-y:scroll;
+}
+.header{
+    background-color:#ffffff;
+    box-shadow: 0 0px 15px rgba(51, 0, 255, 0.05);
+}
+.mdui-toolbar{
+    max-width: 1000px;
+    margin: auto;
+}
+.main{
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 1px;
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+.video{width:100%;height:500px;margin:0 auto;}
+
+a{color: #0000ffa1 ;text-decoration: none;}
+
+img{
+	max-width:100%;   
+	max-height:400px;   
+	margin:auto;
+    display: block;
+}
+.mdui-card{
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgba(22, 9, 218, 0.12);
+}
+
+#comments{
+    border-radius: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mdui-hoverable:hover{
+    -webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,.05),0 8px 10px 1px rgba(0,0,0,.05),0 3px 14px 2px rgba(0,0,0,.05);
+    box-shadow:0 5px 5px -3px rgba(0,0,0,.05),0 8px 10px 1px rgba(0,0,0,.05),0 3px 14px 2px rgba(0,0,0,.05)
+}
+.box {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 5px;
+}
+
+.top-text{
+    font-size:14px;
+    color: #22333373;
+}
+.top-text a {
+    color: #223333c2;
+}
+.top-text a:hover {
+    color: #233333;
+}
+.mdui-card-actions {
+    padding: 15px;
+}
+.top-text i {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 3px;
+    color: #b8b8b8;
+}
+.tags a {
+    font-size: 14px;
+    display: inline-block;
+    color: #233;
+    background-color: #efefef;
+    border-radius: 24px;
+    padding: 6px 12px;
+    margin: 5px;
+}
+.tags a:hover {
+    color: #fff;
+    background-color: #233;
+}
+/* 首页分类 */
+
+.indexcategorylist a {
+    background: #fff;
+	font-size: 14px;
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 20px;
+    color: #171717;
+    margin: 0 10px 10px 0;
+	text-decoration: none;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+	transition: all .3s cubic-bezier(.2, .5, .3, 1);
+}
+.indexcategorylist a:hover {
+    background: #111;
+    color: #fff;
+	transform: translateY(-1px);
+	font-weight: 900;
+}
+a.indexcategory{
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 20px;
+    margin: 0 10px 10px 0;
+	text-decoration: none;
+    background: #111;
+    color: #fff;
+}
+.indexcategorylist {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+
+/* 导航链接激活样式及鼠标防止样式 */
+a.current {
+    font-weight: 900;
+}
+.nav a {
+    color: #233333;
+    display: inline-block;
+    padding: 10px;
+    letter-spacing: 0.25rem;
+}
+.nav a:hover {
+    font-weight: 900;
+    color: #000000;
+}
+.logo {
+    color: #000000;
+    font-weight: 600;
+}
+.logo:hover {
+    color: #cccccc;
+}
+
+/* 分页样式 */
+li{list-style-type:none;font-size: 16px;}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagenav a {letter-spacing:8px;}
+
+a.next{letter-spacing:1px;}
+
+.page-navigator {
+    list-style: none;
+    padding: 10px;
+    /* margin: -8px; */
+    margin-top: 5px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03); */
+}
+
+.page-navigator li {
+    display: inline;
+}
+
+.page-navigator li:last-child {
+    margin-right: 0;
+}
+
+.page-navigator li a {
+    min-width: 39px;
+    height: 27px;
+    /* border: 1px solid #999; */
+    display: inline-block;
+    border-radius: 20px;
+    line-height: 28px;
+    margin-right: 11px;
+    color: #666666;
+    background-color: #fafafa;
+}
+
+.page-navigator li a:hover {
+    background-color: #999;
+    color: #fff;
+}
+
+.page-navigator li.current a {
+    color: #FFF;
+    background: #999;
+}
+ 
+/* footer */
+
+footer{
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+
+/* 评论 */
+.gravatarimg {
+    display: block;
+    max-width: 100%;
+    float: left;
+    margin: 10px;
+}
+.avatar{
+    border-radius: 32px;
+	margin-bottom: 10px;
+}
+.box2 {
+    margin: 10px;
+    display: flow-root;
+}
+.commentc {
+    margin-right: 12px;
+    /* border-radius: 32px; */
+}
+.commenttime{
+	font-size: 12px;
+	color: #b8b8b8;
+}
+.comment-list{
+	border-radius: 5px;
+	border: 1px solid #99999940;
+}
+
