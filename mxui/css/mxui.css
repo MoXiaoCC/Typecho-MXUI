@@ -25,7 +25,9 @@ body{
 .video{width:100%;height:500px;margin:0 auto;}
 
 a{color: #0000ffa1 ;text-decoration: none;}
-
+a:hover {
+    color: #000000;
+}
 img{
 	max-width:100%;   
 	max-height:400px;   
@@ -128,6 +130,7 @@ a.indexcategory{
 a.current {
     font-weight: 900;
 }
+
 .nav a {
     color: #233333;
     display: inline-block;
@@ -216,11 +219,19 @@ footer{
 
 
 /* 评论 */
+.commentc p {
+    margin: 5px;
+	color: #666;
+}
+.commentsreply {
+    margin-right: 20px;
+}
 .gravatarimg {
     display: block;
     max-width: 100%;
     float: left;
-    margin: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
 }
 .avatar{
     border-radius: 32px;
@@ -231,6 +242,7 @@ footer{
     display: flow-root;
 }
 .commentc {
+	display: flow-root;
     margin-right: 12px;
     /* border-radius: 32px; */
 }
@@ -240,6 +252,37 @@ footer{
 }
 .comment-list{
 	border-radius: 5px;
-	border: 1px solid #99999940;
+	/* border: 1px solid #99999940; */
 }
-
+.comment-body{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	border: 1px solid #99999940;
+	margin: 5px;
+	border-radius: 5px;
+}
+.mdui-col-xs-4 {
+    padding: 15px;
+}
+.textareabox {
+    margin: 5px;
+}
+.uk-input:focus{
+    border: 1px solid blue;
+}
+.uk-textarea:focus{
+    border: 1px solid blue;
+}
+.uk-input, .uk-select, .uk-textarea {
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
+    padding: 10px;
+    font-size: 14px;
+    background: #fff;
+    color: #666;
+    border: 1px solid #e5e5e5;
+    transition: 0.2s ease-in-out;
+    transition-property: color, background-color, border;
+}

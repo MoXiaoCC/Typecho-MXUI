@@ -9,6 +9,7 @@
   if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  $this->need('header.php');
  ?>
+<div class="main">
 <div class="mdui-m-t-1" style="background-color:#ffffff;">
 
     <article class="mdui-p-t-1 mdui-p-b-1">
@@ -187,6 +188,8 @@
 <div class="mdui-p-t-1">
 	
     <?php $this->need('comments.php'); ?>
+</div>
+
 </div>
 
 
