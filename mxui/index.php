@@ -5,7 +5,7 @@
  * 
  * @package MXUI
  * @author MoXiao
- * @version 1.0.0
+ * @version 2.0.0
  * @link http://moxiao.cc/
  */
 
