@@ -17,11 +17,10 @@
         ), '', ' - '); ?><?php $this->options->title(); ?>
 	</title>
 
-
-	
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/mdui.min.css'); ?>">
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/mxui.css'); ?>">
 <script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>"></script>
+
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
@@ -32,7 +31,9 @@
     <?php $this->header(); ?>
 </head>
 <style>
-
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, sans-serif;
+}
 </style>
 
 <!--[if lt IE 8]>

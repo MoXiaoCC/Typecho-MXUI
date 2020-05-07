@@ -1,12 +1,27 @@
 <?php
+/**
+
+ * Functions
+ * 
+ * @author MoXiao
+ * @link https://moxiao.cc
+ * @version 2.0.0
+ */
+
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
 
-    echo '<p style="font-size:14px;"><span style="display:block;margin-bottom:10px;margin-top:10px;font-size:18px;color:#233;">欢迎使用MXUI</span>
+    echo '<style>button.btn.primary {position: fixed;right: 50%;bottom: 20px;margin-right: -40px;}.typecho-foot {
+    padding: 4em 0 5em;}</style><p style="font-size:14px;"><span style="display:block;margin-bottom:10px;margin-top:10px;font-size:18px;color:#233;">欢迎使用MXUI</span>
     <span style="display:block;margin-bottom:10px;margin-top:10px;color:#999;">Tips：本主题免费无广告，可以通过下方链接下载或联系我。</span>
     <span style="margin-bottom:10px;display:block"><a href="https://www.moxiao.cc/73.html" target="_blank">更新说明&反馈&建议</a> | <a href="https://github.com/MoXiaoCC/Typecho-MXUI/" target="_blank">GitHub</a></span></p>';
 
+
+// 该iframe仅为统计MXUI主题的使用情况，只在设置外观页面进行加载，不涉及其他，网页已启用https和CDN，不影响贵站访问，如果介意可以删除
+    echo '<iframe src="https://tongji.liuxiaogang.cn/mxui.html" height="1" width="1" frameborder="0"></iframe>';
+
+// 该iframe仅为统计MXUI主题的使用情况，只在设置外观页面进行加载，不涉及其他，网页已启用https和CDN，不影响贵站访问，如果介意可以删除
 
 
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 不填的话网站logo默认为文字'));
@@ -37,9 +52,15 @@ function themeConfig($form) {
 	$tongji = new Typecho_Widget_Helper_Form_Element_Text('tongji', NULL, NULL, _t('统计代码'), _t('例如：< script src="https://s19.cnzz.com/z_stat.php?id=1263256397&web_id=1263256397" language="JavaScript">< /script >'));
     $form->addInput($tongji);
 
+	   /* $DnsPrefetch = new Typecho_Widget_Helper_Form_Element_Radio('DnsPrefetch',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('DNS预解析加速'), _t('默认禁止，启用则会对CDN资源和Gravatar进行加速'));
+		$form->addInput($DnsPrefetch);
+		*/
 	
-	
-/*     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
+/*  $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
     array('ShowRecentPosts' => _t('显示最新文章'),
     'ShowRecentComments' => _t('显示最近回复'),
     'ShowCategory' => _t('显示分类'),
@@ -48,7 +69,7 @@ function themeConfig($form) {
     array('ShowRecentPosts', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'), _t('侧边栏显示'));
     
     $form->addInput($sidebarBlock->multiMode());
-	 */
+*/
 	
 	
 $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(

@@ -32,7 +32,7 @@
 		<!--判断是否设置了打赏图片-->
 		<?php if($this->options->dashang): ?>
 				<div class=" mdui-text-center">
-					<button class="mdui-btn mdui-text-center mdui-color-red mdui-ripple" mdui-dialog="{target: '#dashang'}">打赏</button>
+<button class="mdui-btn mdui-text-center mdui-color-red mdui-ripple" mdui-dialog="{target: '#dashang'}">打赏</button>
 				</div>
 				
 				<div class="mdui-m-b-2 mdui-text-center" style="width:200px;">

@@ -11,11 +11,6 @@
 	</div>
 	<!--统计代码结束-->
 
-	<!-- 每日一言api开始 -->
-	<div id="hitokoto">:D 获取中...</div>
-	<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-	<!-- 每日一言api结束 -->
-
 	<div>
 
 	<a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> &copy; 2017-<?php echo date('Y'); ?>  .
@@ -60,6 +55,6 @@
 	<!-- 计时js结束 -->
 
 
+<?php $this->footer(); ?>
 </body><!-- end #body -->
 </html>
-<?php $this->footer(); ?>

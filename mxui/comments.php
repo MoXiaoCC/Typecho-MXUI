@@ -23,9 +23,11 @@
 <div class="authorandtime">
 	<div class="gravatarimg">
 		<?php $comments->gravatar('40', ''); ?>
+		&#12288;
 	</div>
+	<div class="time2">
 	<span class="mdui-typo-body-1">
-        <?php $comments->author(); ?>
+	    <b><?php $comments->author(); ?></b>
         <?php if ($comments->authorId) {
             if ($comments->authorId == $comments->ownerId) {
                 echo "<span class='author-after-text mdui-text-color-red'>[作者]</span>";
@@ -33,6 +35,7 @@
         <?php }?>
     <a href="<?php $comments->permalink(); ?>" class="mdui-typo-body-1 commenttime"><?php $comments->date('Y-m-d H:i'); ?>
 	</a>
+	</div>
 	<div class="mdui-float-right commentsreply"><?php $comments->reply(); ?></div>
     </span>
 </div>
@@ -107,14 +110,15 @@
             </div>
 			<div>
 
-            <div class="mdui-float-left"><?php $comments->cancelReply(); ?>&nbsp;&nbsp;&nbsp;
+            <div class="mdui-float-left">
+            <p><?php $comments->cancelReply(); ?>&nbsp;&nbsp;&nbsp;
             <?php if($this->user->hasLogin()): ?>
                 <?php _e('当前登录身份: '); ?>
-                <a href="<?php $this->options->profileUrl(); ?>"  ><?php $this->user->screenName(); ?></a> 
+                <b><a href="<?php $this->options->profileUrl(); ?>"  ><?php $this->user->screenName(); ?></a> </b>
                 <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?></a>
                 <?php else: ?>
                 <?php endif; ?>
-            
+            </p>
             </div>
 				<div class="mdui-float-right">
 				<button type="submit" class="submit mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('提交评论'); ?></button>
