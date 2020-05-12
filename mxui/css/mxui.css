@@ -37,7 +37,7 @@ body{
 }
 
 
-a{color: #0000ffa1 ;text-decoration: none;}
+a{color: #999999 ;text-decoration: none;}
 a:hover {
     color: #000000;
 }
@@ -82,7 +82,7 @@ pre:hover {
     color: #22333373;
 }
 .top-text a {
-    color: #223333c2;
+    color: #999999;
 }
 .top-text a:hover {
     color: #233333;
@@ -275,14 +275,12 @@ footer{
 }
 .comment-list{
 	border-radius: 5px;
-	/* border: 1px solid #99999940; */
 }
 .comment-body {
     list-style: none;
-    /* margin: 0px; */
     padding: 0px 0px;
     line-height: 1.3rem;
-    border: 1px solid #99999940;
+	border: 1px solid rgba(99,99,99,.18);
     margin: 5px;
     border-radius: 5px;
 }
@@ -293,10 +291,10 @@ footer{
     margin: 5px;
 }
 .uk-input:focus{
-    border: 1px solid blue;
+    border: 1px solid #ffffff;
 }
 .uk-textarea:focus{
-    border: 1px solid blue;
+    border: 1px solid #ffffff;
 }
 .uk-input, .uk-select, .uk-textarea {
     max-width: 100%;
@@ -304,9 +302,9 @@ footer{
     border: 0 none;
     padding: 10px;
     font-size: 14px;
-    background: #fff;
+    background: #f1f1f1;
     color: #666;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #f1f1f1;
     transition: 0.2s ease-in-out;
     transition-property: color, background-color, border;
 }
